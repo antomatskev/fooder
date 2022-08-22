@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fooder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+
+<p class="wopfe">fooder</p>
+<div class="login-box">
+    <h1 class="login">Log In</h1>
+    <form class="form-signin" method="post" action="/login">
+        <div class="textbox">
+            <p>
+                <input type="text" id="username" name="username"
+                       class="form-control" placeholder="Username" required=""
+                       autofocus="">
+            </p>
+        </div>
+        <div class="textbox">
+            <p>
+                <input type="password" id="password" name="password"
+                       class="form-control" placeholder="Password" required="">
+            </p>
+        </div>
+        <p class="rememberMe">
+            Remember me
+            <input type="checkbox" id="remember-me" name="remember-me"
+                   class="form-control">
+        </p>
+        <input class="btn" type="submit" name="" value="Sign in">
+    </form>
+<!--    <div id="error" th:if="${errorMessage}" th:utext="${errorMessage}"></div>-->
+</div>
+<!--<div class="footer" th:insert="blocks/footer :: footer"></div>-->
+
+</body>
+</html>

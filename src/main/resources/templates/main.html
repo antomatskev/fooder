@@ -8,32 +8,7 @@
 </head>
 <body>
 <div th:insert="blocks/header :: header"></div>
-<div id="main" class="main">
-    <h1 class="moreGreenText appName">fooder</h1>
-    <hr class="line">
-    <div class="content">
-        <table class="greyGridTable">
-            <thead>
-            <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Class</th>
-                <th>Username</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-<!--                <td th:text="${userObj.id}"></td>-->
-<!--                <td th:text="${userObj.fullName}"></td>-->
-<!--                <td th:text="${userObj.userRole}"></td>-->
-<!--                <td th:text="${userObj.clazz}"></td>-->
-<!--                <td th:text="${userObj.username}"></td>-->
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<!--<script src="/js/menu.js"></script>-->
+<div th:insert="blocks/providers :: providers"></div>
+
 </body>
 </html>

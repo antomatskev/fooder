@@ -1,6 +1,7 @@
 package eu.fooder.security;
 
 import eu.fooder.auth.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,16 +19,11 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
     private final UserService appUserService;
-
-    @Autowired
-    public SecurityConfig(PasswordEncoder passwordEncoder, UserService appUserService) {
-        this.passwordEncoder = passwordEncoder;
-        this.appUserService = appUserService;
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

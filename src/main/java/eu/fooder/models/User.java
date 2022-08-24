@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -19,14 +20,16 @@ public class User implements UserDetails {
     private String username;
     private String firstName;
     private String lastName;
-    private String clazz;
     private boolean isAccountNonExpired;
     private boolean isAccountNonLocked;
     private boolean isCredentialsNonExpired;
     private boolean isEnabled;
+    @OneToOne
+    private Order currentOrder;
+    @OneToMany
+    private List<Order> orderList;
 
-    public User() {
-    }
+    public User() { }
 
     public User(Long id, String username,
                 String password,
@@ -120,6 +123,22 @@ public class User implements UserDetails {
 
     public String getFullName() {
         return String.format("%s %s", firstName, lastName);
+    }
+
+    public Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    public void setCurrentOrder(Order currentOrder) {
+        this.currentOrder = currentOrder;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
     }
 
     public void setAccountNonExpired(boolean accountNonExpired) {

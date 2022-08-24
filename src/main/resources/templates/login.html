@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>fooder</title>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css.min.css"/>
 </head>
 <body>
+<div th:insert="blocks/header :: header"></div>
 
-<p class="wopfe">fooder</p>
+<h1>fooder</h1>
 <div class="login-box">
-    <h1 class="login">Log In</h1>
+    <h2 class="login">Log In</h2>
     <form class="form-signin" method="post" action="/login">
         <div class="textbox">
             <p>
@@ -34,7 +35,5 @@
     </form>
 <!--    <div id="error" th:if="${errorMessage}" th:utext="${errorMessage}"></div>-->
 </div>
-<!--<div class="footer" th:insert="blocks/footer :: footer"></div>-->
-
 </body>
 </html>

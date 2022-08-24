@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 // NB! Order of matchers is important!!!
-                .antMatchers("/", "/resources/**", "/css/*", "/js/*").permitAll()
+                .antMatchers("/", "/about", "/resources/**", "/css/*", "/js/*").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -49,7 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .rememberMe() // Defaults session id expiration to 2 weeks.
                 .tokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(21)) // Extend for 21 days.
-                .key("123somethingverysecured!")
+                .key("xnj0nj9jxtym5ctrm.hyjt3ghzv7yt8vjue")
                 .rememberMeParameter("remember-me")
                 .and()
                 .logout()
